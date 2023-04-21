@@ -1,45 +1,35 @@
-package baitap.bai1;
+package baitap.bai2;
 
-public class Circle extends Shape {
-  private double radius = 1.0;
+public class Circle implements GeometricObject{
+  private double radius;
 
-  public Circle() {
+
+  public Circle(){
+    super();
   }
 
-  public Circle(double radius) {
-    this.radius = radius;
-  }
-
-  public Circle(String color, boolean filled, double radius){
-    super(color, filled );
-    this.radius = radius;
-  }
-
-  public double getRadius(){
-    return radius;
-  }
-
-  public void setRadius(double radius){
+  public Circle(double radius){
     this.radius = radius;
   }
 
   @Override
   public double getArea(){
-    return 2.0;
+    return Math.PI*radius*radius;
   }
 
   @Override
-  public double getPerimiter(){
-    return 4.5;
+  public double getPerimeter(){
+    return 2*Math.PI*radius;
   }
-
 
   @Override
-  public String toString() {
-    return "Circle{" +"Shape {"+
-      "color="+getColor ()+
-      "filled="+ isFilled ()+
-      "radius=" + radius +
-      "} " + super.toString ( );
+  public String toString(){
+    return "Circle{"+
+      "Radius = "+ radius +
+      ",  Area = " + getArea ()+
+      ",  Perimeter = " +getPerimeter ();
   }
+
+
+
 }
